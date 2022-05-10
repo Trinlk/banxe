@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .grid-container {
+            display: grid;
+            height: 400px;
+            grid-template-columns: 70% auto;
+            /* background-color: #2196F3; */
+            padding: 10px;
+        }
+
+        .grid-item {
+            background-color: #E9E3E3;
+            border-radius: 10px;
+            margin: 0px 10px;
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .grid-container-cars {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            /* background-color: #2196F3; */
+            padding: 10px;
+            column-gap: 50px;
+            row-gap: 50px;
+        }
+
+        .grid-item-cars {
+            height: 280px;
+            background-color: #E9E3E3;
+            border-radius: 10px;
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-item">
+        <ul>
+            <li><a href="">HOME</a></li>
+            <li><a href="">ABOUT</a></li>
+            <li><a href="">CAR</a></li>
+            <li><a href="">NEWS</a></li>
+            <li><a href="">CONTACT</a></li>
+        </ul>
+    </div>
+
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <img src="/image/banner.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="/image/banner2.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="/image/banner3.jpg" style="width:100%">
+        </div>
+
+    </div>
+    <br>
+
+    <div style="text-align:center; display: none;">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    </script>
+
+    <div class="container-content">
+        <section>
+            <div class="grid-container">
+                <div class="grid-item">NEWS
+                    <div class="new1">
+                        <img src="/image/2022kiacarnivalsedonampv4.jpg" alt="">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem eveniet at ipsa quasi magni minus fuga, sint ab doloribus sed eum ex asperiores illum! Ducimus consequatur delectus non sed recusandae.</p>
+                    </div>
+                    <div class="new1">
+                        <img src="/image/2022kiacarnivalsedonampv4.jpg" alt="">
+                    </div>
+                </div>
+                <div class="grid-item"></div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
